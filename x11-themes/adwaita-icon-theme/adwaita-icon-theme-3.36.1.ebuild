@@ -48,7 +48,10 @@ src_prepare() {
 		-i "${S}"/Makefile.in || die
 
 	gnome3_src_prepare
-	gnome3_gdk_pixbuf_update
+}
+
+pkg_preinst() {
+    /usr/bin/gdk-pixbuf-query-loaders --update-cache
 }
 
 pkg_postinst() {
