@@ -50,10 +50,6 @@ src_prepare() {
 	gnome3_src_prepare
 }
 
-pkg_preinst() {
-    /usr/bin/gdk-pixbuf-query-loaders --update-cache
-}
-
 pkg_postinst() {
 	gnome3_pkg_postinst
 	XDG_UPDATE_ICON_CACHE=$(type -P true)
